@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }}</title>
+    <style>
+        body{
+            background-image: url('https://img.freepik.com/free-photo/tasty-flexitarian-diet-frame_23-2148862684.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ category.name }}</h1>
+    <h2>Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
